@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>go</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .inner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50000px;
+            height: 50000px;
+            background-color: blue;
+        }
+
+        .container {
+            width: 10000px;
+            height: 10000px;
+            border: 1px solid rgb(66, 92, 66);
+            margin-top: 5px;
+            position: relative;
+            z-index: 5;
+            background-image: url("bg/1bg.png");
+
+        }
+
+        .avatar {
+            /* border: 1px solid; */
+            width: 100px;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="inner">
+        <div class="container">
+            <img src="avatar-med/avatar.png" alt="" class="avatar">
+        </div>
+    </div>
+    <script src="js/Go.js"></script>
+    <script src="js/Rotate.js"></script>
+    <script src="js/Animation.js"></script>
+    <script src="js/DocumentListener.js"></script>
+    <script src="js/result.js"></script>
+</body>
+
+</html>
