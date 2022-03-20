@@ -27,7 +27,6 @@ class Animation extends Rotate {
                 "avatar-med/avatarRight.png",
                 "avatar-med/avatarGoRight2.png",
                 "avatar-med/avatarRight.png",
-                
             ]
             this.rightInterval = setInterval(() => {
                 animationNumber = this.generaitAnimationNumber(animationNumber, animationArray.length - 1)
