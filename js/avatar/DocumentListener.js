@@ -3,6 +3,7 @@ class DocumentListener extends Animation {
         super(item)
         this.item = item
         document.addEventListener('keydown', (event) => {
+            this.item
             switch (event.key) {
                 case "ArrowRight":
                     event.preventDefault()
@@ -57,12 +58,12 @@ class DocumentListener extends Animation {
     }
 
     goListener() {
-        console.log(
-            this.goLeftInterval,
-            this.goRightInterval,
-            this.goTopInterval,
-            this.goBottomInterval,
-        )
+        if (this.goLeftInterval !== false ||
+            this.goRightInterval !== false ||
+            this.goTopInterval !== false ||
+            this.goBottomInterval !== false) {
+            
+        }
         if (this.goLeftInterval !== false && this.goBottomInterval !== false) {
             this.item.dispatchEvent(new CustomEvent("goLeftBottom", {
                 cancelable: true,

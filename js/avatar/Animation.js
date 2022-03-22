@@ -8,12 +8,10 @@ class Animation extends Rotate {
         this.bottomInterval = false
         console.log(this)
         this.item.addEventListener('goLeftBottom', (event) => {
-            console.log('test An')
             this.bottom('remove')
             this.left('add')
         })
         this.item.addEventListener('goLeftTop', (event) => {
-            console.log("test Top")
             this.top('remove')
             this.left('add')
         })

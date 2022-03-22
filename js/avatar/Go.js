@@ -1,5 +1,6 @@
-class Go {
+class Go extends Cordinate{
     constructor(item) {
+        super(item)
         this.item = item
         this.item.style.left = `${window.outerWidth / 2 - this.item.offsetWidth / 2}px`
         this.item.style.top = `${window.outerHeight / 2 - this.item.offsetHeight / 2}px`
@@ -7,11 +8,6 @@ class Go {
         this.goLeftInterval = false
         this.goTopInterval = false
         this.goBottomInterval = false
-        setInterval(() => {
-            // console.log()
-            console.log(window.scrollY, window.scrollX)
-
-        }, 500);
 
     }
 
@@ -25,6 +21,11 @@ class Go {
                     this.item.style.left = newLeft
                     window.scrollTo(Math.round(window.scrollX + 2), window.scrollY)
                 }
+
+                this.item.dispatchEvent(new CustomEvent("go", {
+                    cancelable: true,
+                }))
+
             }, 40);
         } else if (type === "remove" && this.goRightInterval !== false) {
             clearInterval(this.goRightInterval)
@@ -41,6 +42,11 @@ class Go {
                     this.item.style.left = newLeft
                     window.scrollTo(Math.round(window.scrollX - 2), window.scrollY)
                 }
+
+                this.item.dispatchEvent(new CustomEvent("go", {
+                    cancelable: true,
+                }))
+
             }, 40);
         } else if (type === "remove" && this.goLeftInterval !== false) {
             clearInterval(this.goLeftInterval)
@@ -59,7 +65,9 @@ class Go {
                     window.scrollTo(window.scrollX, Math.round(window.scrollY - 2))
                 }
 
-
+                this.item.dispatchEvent(new CustomEvent("go", {
+                    cancelable: true,
+                }))
 
                 if (this.top) {
                     this.top('add')
@@ -81,6 +89,11 @@ class Go {
                     this.item.style.top = newTop
                     window.scrollTo(window.scrollX, Math.round(window.scrollY + 2))
                 }
+
+                this.item.dispatchEvent(new CustomEvent("go", {
+                    cancelable: true,
+                }))
+
                 if (this.bottom) {
                     this.bottom('add')
                 }
