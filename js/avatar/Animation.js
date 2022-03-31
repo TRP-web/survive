@@ -6,14 +6,21 @@ class Animation extends Rotate {
         this.leftInterval = false
         this.topInterval = false
         this.bottomInterval = false
-        console.log(this)
+        this.item.addEventListener('goLeftTop', (event) => {
+            this.top('remove')
+            this.left('add')
+        })
         this.item.addEventListener('goLeftBottom', (event) => {
             this.bottom('remove')
             this.left('add')
         })
-        this.item.addEventListener('goLeftTop', (event) => {
+        this.item.addEventListener('goRightTop', (event) => {
             this.top('remove')
-            this.left('add')
+            this.right('add')
+        })
+        this.item.addEventListener('goRightBottom', (event) => {
+            this.bottom('remove')
+            this.right('add')
         })
     }
 
@@ -120,7 +127,7 @@ class Animation extends Rotate {
             this.leftInterval === false &&
             this.topInterval === false &&
             this.bottomInterval === false) {
-                return true
+            return true
         } else {
             return false
         }

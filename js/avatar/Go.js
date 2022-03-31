@@ -1,4 +1,4 @@
-class Go extends Cordinate{
+class Go extends Cordinate {
     constructor(item) {
         super(item)
         this.item = item
@@ -8,7 +8,6 @@ class Go extends Cordinate{
         this.goLeftInterval = false
         this.goTopInterval = false
         this.goBottomInterval = false
-
     }
 
     goRight(type) {
@@ -63,6 +62,7 @@ class Go extends Cordinate{
                     let newTop = `${number}px`
                     this.item.style.top = newTop
                     window.scrollTo(window.scrollX, Math.round(window.scrollY - 2))
+                    this.setZIndex()
                 }
 
                 this.item.dispatchEvent(new CustomEvent("go", {
@@ -88,6 +88,7 @@ class Go extends Cordinate{
                     let newTop = `${number}px`
                     this.item.style.top = newTop
                     window.scrollTo(window.scrollX, Math.round(window.scrollY + 2))
+                    this.setZIndex()
                 }
 
                 this.item.dispatchEvent(new CustomEvent("go", {
@@ -103,5 +104,8 @@ class Go extends Cordinate{
             this.goBottomInterval = false
         }
 
+    }
+    setZIndex() {
+        this.item.style.zIndex = Math.round(this.getCordinat().y) + Math.round(this.item.offsetHeight) 
     }
 }

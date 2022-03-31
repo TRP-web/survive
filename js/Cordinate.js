@@ -1,6 +1,6 @@
-class Cordinate {
+class Cordinate extends EventTarget {
     constructor(item) {
-        // super(item)
+        super()
         this.item = item
         this.x = this.item.getBoundingClientRect().left + window.pageXOffset
         this.y = this.item.getBoundingClientRect().top + window.pageYOffset

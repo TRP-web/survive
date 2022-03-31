@@ -1,11 +1,15 @@
 class TreeInner {
-    constructor(items) {
-        this.items = items
+    constructor(maxTree) {
+        this.maxTree = maxTree
         this.treeInner = []
-        this.items.forEach(elem => {
-            this.treeInner.push(new Tree(elem))
-            console.log(this.treeInner)
-        })
+        for (let index = 1; index < this.maxTree; index++) {
+            let newTree = document.createElement("img")
+            newTree.className = "wood"
+            document.querySelector('.container').prepend(newTree)
+            this.treeInner.push(new Tree(newTree))
+        }
+
+
     }
 
     getObjectWithId(id) {

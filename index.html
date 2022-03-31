@@ -26,7 +26,7 @@
             align-items: center;
             width: 50000px;
             height: 50000px;
-            background-image: url("bg/trees.png");
+            background-image: url("bg/backTrees.png");
             background-color: #5DB159;
         }
 
@@ -62,8 +62,7 @@
         .wood {
             width: 200px;
             position: absolute;
-            left: 500px;
-            top: 500px;
+            
             cursor: pointer;
         }
 
@@ -100,11 +99,26 @@
                 transform: translateX(0px) translateY(0px);
             }
         }
+
+        .inventar{
+            position: fixed;
+            width: 150px;
+            height: 50px;
+            background-color: black;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            color: #fff;
+        }
     </style>
 </head>
 
 <body>
+    
     <div class="inner">
+        <div class="inventar">
+
+        </div>
         <div class="inner__load">
             <img class="load" src="avatar-med/avatar.png" alt="">
             <img class="load" src="avatar-med/avatarBack.png" alt="">
@@ -139,6 +153,7 @@
     <script src="js/avatar/Avatar.js"></script>
     <script src="js/items/Tree.js"></script>
     <script src="js/items/TreeInner.js"></script>
+    <script src="js/inventar/Inventar.js"></script>
     <script src="js/result.js"></script>
 </body>
 

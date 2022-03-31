@@ -62,7 +62,7 @@ class DocumentListener extends Animation {
             this.goRightInterval !== false ||
             this.goTopInterval !== false ||
             this.goBottomInterval !== false) {
-            
+
         }
         if (this.goLeftInterval !== false && this.goBottomInterval !== false) {
             this.item.dispatchEvent(new CustomEvent("goLeftBottom", {
@@ -76,6 +76,26 @@ class DocumentListener extends Animation {
             }))
         } else if (this.goLeftInterval !== false && this.goTopInterval !== false) {
             this.item.dispatchEvent(new CustomEvent("goLeftTop", {
+                cancelable: true,
+                detail: [
+                    this.goLeftInterval,
+                    this.goRightInterval,
+                    this.goTopInterval,
+                    this.goBottomInterval,
+                ]
+            }))
+        } else if (this.goRightInterval !== false && this.goTopInterval !== false) {
+            this.item.dispatchEvent(new CustomEvent("goRightTop", {
+                cancelable: true,
+                detail: [
+                    this.goLeftInterval,
+                    this.goRightInterval,
+                    this.goTopInterval,
+                    this.goBottomInterval,
+                ]
+            }))
+        } else if (this.goRightInterval !== false && this.goBottomInterval !== false) {
+            this.item.dispatchEvent(new CustomEvent("goRightBottom", {
                 cancelable: true,
                 detail: [
                     this.goLeftInterval,
